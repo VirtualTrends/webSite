@@ -1,3 +1,10 @@
+# INTEGRANTES ACTUALES QUE PARTICARAN EN LA REFORMULACION DEL SITIO WEB 2023 VIRTUAL TRENDS
+  - Antonini, Carla Gisele
+  - Fiore, Agostina Maria 
+  - Ponce, Dalma
+  - Yonatan, Acuña
+  - Amaya, Aisha
+
 # ProyectoIntegrador-E-COMMERCE
 
 Proyecto web para la materia Programador Web en la tecnicatura del ISPC.
@@ -24,13 +31,7 @@ Virtual Trend es una empresa que está siempre abierta a la incorporación conti
 
 
 
-# INTEGRANTES (Aula 5)
-  - Antonini, Carla Gisele
-  - Fiore, Agostina Maria 
-  - Gambone  Martinez, Joaquín
-  - Ledesma, Mario Daniel 
-  - Méndez,Andrés Gastón
-  - Rochetti, Uriel
-  - Santana Fagnani, Estefanía Muriel
+
+   
 
 
