@@ -1,0 +1,47 @@
+<div class="container-principal">
+  <h1 class="administrar-usuario">ADMINISTRAR USUARIOS</h1>
+  <div class="eliminar">
+    <button class="boton-admin" (click)="showForm()">ELIMINAR USUARIO</button>
+
+    <div *ngIf="this.formUp == true" class="container-eliminar">
+      <p>Ingrese <b>id del usuario</b> que desea eliminar de la base de datos.</p>
+      <p><b>IMPORTANTE</b>: Se recuerda que una vez eliminado el mismo no se podrá recuperar. Es una acción irreversible.</p>
+
+      <form [formGroup]="idUsuarioForm" class="form-reg">
+        <div class="form-group">
+          <label>DNI de Usuario:</label>
+          <input formControlName="dni" type="number" class="form-control">
+          <div *ngIf="this.idUsuarioForm.controls.dni.invalid && (this.idUsuarioForm.controls.dni.dirty || this.idUsuarioForm.controls.dni.touched)" class="text-danger">
+            <div *ngIf="this.idUsuarioForm.controls.dni.errors?.['required']">
+              <p class="text-danger">Este campo es requerido.</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-danger">{{messejeError}}</p>
+        <p class="text-success">{{messejeInfo}}</p>
+        <button type="button" class="boton-admin" (click)="eliminarUsuario()">Eliminar</button>
+
+      </form>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">DNI</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nivel</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let user of listUser">
+            <td>{{ user.dni }}</td>
+            <td>{{ user.nombre }}</td>
+            <td>{{ user.apellido }}</td>
+            <td>{{ user.id_lvl_id }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

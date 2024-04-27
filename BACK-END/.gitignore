@@ -1,0 +1,11 @@
+#ENTORNO-VIRTUAL
+env/
+CAenv/
+VIRTUAL_TRENDS/CApipenv/
+
+#PYTHON ARCHIVOS 
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+migrations/

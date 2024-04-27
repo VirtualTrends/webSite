@@ -1,0 +1,315 @@
+  /* Estilos para el footer */
+*{
+  background-color:#F7F7F2;
+  
+}
+  .ca-footer {
+    flex-direction: column;
+    position: relative;
+    font-family: 'Archivo',sans-serif;
+    width: 100%;
+    display: flex;
+    background-color: #F7F7F2;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.75rem;
+    color: #575757;
+    margin: 0;
+    padding: 0;
+  }
+  .ca-grid_item_left,
+  .ca-grid_item_center,
+  .ca-grid_item_right {
+    margin-top: 0;
+  }
+  
+  .ca-footer__text {
+    flex-grow: 1;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #575757;
+  }
+
+  .ca-menu.ca-footer-menu_left {
+    margin-top: 5em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ca-menu.ca-footer-menu_right {
+    margin-top: 5em;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ca-footer-menu {
+    list-style: none;
+    margin: 0;
+    /*padding: 0;*/
+    line-height: 1.1;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*display: table-row-group;*/
+    justify-content:space-between;
+  }
+  
+  .ca-menu__link {
+    flex-grow: 1;
+    line-height: 1.9;
+    text-decoration: none;
+    color: #191B1D;
+    margin-top: 20px 20px 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .ca-links-info {
+    margin-left: 1rem;
+    
+  }
+
+  .ca-menu__link:hover {
+    color: #575757;
+    text-decoration: underline;
+  }
+  
+  .ca-menu__link.active {
+    color: #191B1D;
+  }
+  
+  .ca-u-bold {
+    font-weight: 600;
+  }
+  
+  .ca-u-bolder {
+    font-weight: 700;
+  }
+  
+  .rk-dark-color {
+    color: #191B1D;
+  }
+  
+  .ca-footer_contact a,
+  .ca-footer_by a {
+    color: #191B1D;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .ca-footer_contact a:hover,
+  .ca-footer_by a:hover {
+    color: #575757;
+    text-decoration: underline;
+    text-underline-offset: 5px; 
+  }
+
+  
+  /* Grid */
+  .ca-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-direction: row;*/
+    justify-content: space-between;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;;
+    grid-gap: 20px;
+  }
+  .ca-grid_item_right {
+    width: 100%;
+    /*display: flexbox;*/
+    /*margin-bottom: 0.75rem;*/
+    text-align: left;
+    justify-content: center;
+  }
+  
+  .ca-grid_item_center {
+    align-items: center;
+    width: 100%;
+    /*margin-bottom: 0.75rem;*/
+    /*display: inline;*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ca-grid_item_center_newsletter{
+    align-items: center;
+    margin: 0% 5% 5% 5%;
+    width: 80%;
+    display: inline;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .ca-grid_item_left {
+    width: 100%;
+    display: flexbox;
+    margin-bottom: 0.75rem;
+    /*text-align: right;*/
+  }
+
+  /* CSS para NEWSLETTER*/
+
+  .newsletter {
+    /*position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 53%;*/
+    margin-top: 0.90em;
+    margin-bottom: 2.25em;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    order: 1;
+  }
+  
+  .newsletter-title {
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25em;
+    color: #3B3D40;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .newsletter-input {
+    display: flex;
+    font-family: 'Archivo', sans-serif;
+    border: 1px solid #646363;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .newsletter-input input {
+    flex: 1;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    font-size: 14px;
+    color: #877873;
+    border: none; /* Elimina el borde */
+    background-color: transparent; 
+    border-radius: 0;
+  }
+  
+  .newsletter-input input:focus {
+    box-shadow: none; /* Elimina el estilo de sombra en el enfoque */
+    border: none; /* Elimina un borde en el enfoque */
+    outline: none; /* Elimina línea en el estilo de enfoque */
+    -webkit-appearance: none; /* Desactiva los estilos de apariencia del navegador */
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .btn-dark{
+    background-color: #646363;
+    font-style: normal;
+    color: #F7F7F2;
+    border-radius: 1%;
+    left: 8.76%;
+    right: 9.73%;
+    top: 42.22%;
+    bottom: 31.11%;
+    font-size: 1.25em;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    
+  }
+
+  .newsletter-input .btn .btn-dark {
+    cursor: pointer;
+    width: 112px;
+    height: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    color:#646363;
+    border-radius: 1%;
+    margin-left: auto;
+  }
+
+  .newsletter-input .btn .btn-dark:hover {
+    color: #191B1D;
+    background-color: #646363;
+    border: none;
+  }
+
+  .newsletter-input .btn .btn-dark:active {
+    color:#646363;
+    background-color: #F7F7F2;
+    border: none;
+  }
+
+  .newsletter-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    height: 100%;
+    margin: 0;
+    border: none;
+    font-size: 14px;
+    color: #877873;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .newsletter-input input::placeholder {
+    text-align: left;
+  }
+
+
+  .ca-footer_copy {
+    margin-top: 1em;
+    text-align: center;
+    order: 2;
+  }
+
+
+  @media screen and (min-width: 599px) and (max-width: 767px) {
+    
+    .ca-menu__link {
+      font-size: 13px;
+      /*line-height: 1.65em;*/ 
+    }
+
+    .ca-grid_item_center{
+      height: 65%;
+    }
+   
+    
+  }
+
+  @media screen and (max-width: 599px){
+
+    .ca-grid {
+      grid-template-columns: 1fr;
+      justify-content: center; /* Centra los elementos en la columna */
+    }
+    .ca-grid_item_center {
+      width: 100%; /* Asegura que ocupe todo el ancho disponible */
+      margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+      order: 1;
+    }
+    .newsletter {
+      width: 80%;
+      margin: 0% 10% 10% 10%;
+    }
+    
+    .ca-grid_item_left {
+      display: none;
+    }
+    .ca-grid_item_right {
+      display: none;
+    }
+    
+
+  }
+  
