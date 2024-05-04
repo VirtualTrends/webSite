@@ -104,11 +104,15 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbvirtualtrends',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'yokit@11',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'traditional',
+            #'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            #'charset': 'utf8mb4',
+            #'use_unicode': True,
+            #'client': 'pymysql',
         }
     }
 }

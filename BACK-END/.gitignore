@@ -2,6 +2,7 @@
 env/
 CAenv/
 VIRTUAL_TRENDS/CApipenv/
+/venv
 
 #PYTHON ARCHIVOS 
 __pycache__/
