@@ -1,6 +1,5 @@
 import os
-from dotoenv import load_dotenv # type: ignore
-
+from dotenv import load_dotenv
 from .base import *
 
 
