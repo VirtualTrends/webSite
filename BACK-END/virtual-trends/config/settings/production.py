@@ -1,8 +1,13 @@
 import os
+from dotoenv import load_dotenv # type: ignore
+
 from .base import *
 
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
+dotenv_path = 'webSite/BACK-END/virtual-trends/.env' 
+load_dotenv(Path.joinpath(BASE_DIR, dotenv_path))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Lo cambio a false en produccion
