@@ -9,13 +9,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # El valor de la secret key depende del ambiente, si es para desarrollo suele ser sencillo tipo 1234 pero si es de produccion conviene que sea elaborada por temas de seguridad
-# TODO SECRET_KEY = 'django-insecure-a9=qz^k!f3!#+!aj_!15gu9^5sii%@@w%iru3z5gquma_4(9j-'
+# SECRET_KEY = 'django-insecure-a9=qz^k!f3!#+!aj_!15gu9^5sii%@@w%iru3z5gquma_4(9j-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# TODO DEBUG = True
+# DEBUG = True
 
 #Depende del ambiente. En produccion no se puede dejar vacío, es dónde se va a encontrar la aplicacion virtual trends django
-# TODO ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Divido las apps de installed_apps (ahora base) van las de django, segun sean apps de base, locales, o terceras aplicaciones que usamos
