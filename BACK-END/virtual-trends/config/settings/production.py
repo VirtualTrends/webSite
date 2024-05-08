@@ -25,3 +25,5 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT'),
     }
 }
+
+STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')
