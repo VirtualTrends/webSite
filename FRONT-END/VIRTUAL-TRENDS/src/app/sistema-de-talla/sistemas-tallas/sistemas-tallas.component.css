@@ -64,6 +64,19 @@
   background: #FFFFFF;
   color: #3B3D40;
 }
+
+.STtextAppMobil {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-size: 0.90em;
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 25%;
+  width: 100%;
+  margin-bottom: 10%;
+  letter-spacing: 0.18em;
+}
 @media (max-width: 769px) {
   .container-texto {
     margin: 0 auto;
