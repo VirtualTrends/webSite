@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { SwAppMobileService } from 'src/app/services/sw-appmobile';
 import { SwEstandarService } from 'src/app/services/sw-estandar.service';
 import { SwPersonalizadoService } from 'src/app/services/sw-personalizado.service';
 
@@ -9,16 +10,20 @@ import { SwPersonalizadoService } from 'src/app/services/sw-personalizado.servic
 })
 export class SistemasTallasComponent implements OnInit {
 
+
   ngOnInit(): void {
 
     this.estandarSS.$tallaEstandar.subscribe((valor)=>{this.tofEstandar = valor});
     
     this.personalizadoSS.$tallePersonalizado.subscribe((valor)=> {this.tofPersonalizado = valor});
+
+    this.appmobileSS.$appMobile.subscribe((valor)=>{this.tofAppMobile = valor});
   }
   
 
   tofEstandar:boolean = false;
   tofPersonalizado:boolean = false;
+  tofAppMobile:boolean = false;
 
   abrirEstandar(){
     this.tofEstandar = true;
@@ -29,8 +34,12 @@ export class SistemasTallasComponent implements OnInit {
     this.tofPersonalizado = true;
 
   }
+  abrirAppMobile(){
+    this.tofAppMobile = true;
+
+  }
  
-  constructor(private estandarSS: SwEstandarService, private personalizadoSS: SwPersonalizadoService){
+  constructor(private estandarSS: SwEstandarService, private personalizadoSS: SwPersonalizadoService, private appmobileSS:SwAppMobileService){
 
   }
 

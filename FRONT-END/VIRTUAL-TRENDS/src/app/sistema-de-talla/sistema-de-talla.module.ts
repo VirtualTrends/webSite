@@ -7,7 +7,7 @@ import { ImagenComponent } from './imagen/imagen.component';
 import { PanelDeControlComponent } from './panel-de-control/panel-de-control.component';
 import { TallaPersonalizadaComponent } from './talla-personalizada/talla-personalizada.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AppMobileComponent } from './app-mobile/app-mobile.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ImagenComponent,
     PanelDeControlComponent,
     TallaPersonalizadaComponent,
-    TallaEstandarComponent
+    TallaEstandarComponent, 
+    AppMobileComponent
   ],
   imports: [
     CommonModule,
