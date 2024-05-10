@@ -17,7 +17,7 @@ export class SistemasTallasComponent implements OnInit {
     
     this.personalizadoSS.$tallePersonalizado.subscribe((valor)=> {this.tofPersonalizado = valor});
 
-    this.appmobileSS.$appMobile.subscribe((valor: boolean)=>{this.tofEstandar = valor});
+    this.appmobileSS.$appMobile.subscribe((valor)=>{this.tofAppMobile = valor});
   }
   
 
