@@ -5,7 +5,7 @@
     margin-top: 1em;
     margin-bottom: 11.72%;
     width: 427px;
-    height: 423px;
+    height: 380px;
     border: 2px solid #3b3d40;
     border-radius: 6px;
     background-color: #F8F8F8;
@@ -81,7 +81,7 @@
   }
 
   .appmobile{
-    background-color: #575757;
+    
     border: 3px #575757;
     border-radius: 3px;
     width: 256px;
@@ -89,5 +89,10 @@
     margin-left: 85px;
     margin-right: 85px;
     margin-top: 50px;
-    height: 35px;
+    height: 25px;
+  }
+
+  .appmobile img{
+    margin-left: 28px;
+
   }
