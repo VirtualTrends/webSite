@@ -15,7 +15,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 #Depende del ambiente. En produccion no se puede dejar vacío, es dónde se va a encontrar la aplicacion virtual trends django
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['*']
+
+
+ALLOWED_HOSTS = [ '*' ]
 
 DATABASES = {
     'default': {
@@ -30,4 +33,4 @@ DATABASES = {
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
