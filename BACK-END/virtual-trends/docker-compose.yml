@@ -4,21 +4,24 @@ services:
 
   django:
     build: .
+    restart: always
     ports:
-      - "8000:8000"
+      - '8000:8000'
     volumes:
       - .:/app
     depends_on:
       - postgres
   
   postgres:
-    image: postgres:14.3-alpine3.1
+    image: postgres:14.3-alpine3.16
     ports:
-      - "5431:5432"
+      - "5432:5432"
     volumes:
       - ./database:/var/lib/postgresql/data
+    #command: ["sh", "-c", "chown -R postgres:postgres /var/lib/postgresql/data && chmod -R 700 /var/lib/postgresql/data"]
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+      - LANG=en_US.utf8
       
