@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Categoria, Productos, ColoresProductos, ImagenesProducto, Colores, Login, Favoritos, Usuario
+from .models import *
 #from django.contrib.auth import get_user_model
 
 class LoginSerializer(serializers.ModelSerializer):
@@ -16,6 +16,12 @@ class ColorProducSerializer(serializers.ModelSerializer):
     class Meta:
         model = ColoresProductos
         fields = ['id_color']
+        
+class ProducCarritoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductosEnCarrito
+        fields = '__all__'
+
 
 class ColorSerializer(serializers.ModelSerializer):
     class Meta:
