@@ -10,6 +10,7 @@ export class ProductDataService {
     "id_producto": 0,
     "id_usuario": 0,
     "cantidad": 1,
+    "icon":'#',
     "talla": "X",
     "color": "Azul",
     "personalizado": false
