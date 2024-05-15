@@ -190,8 +190,8 @@ class ProductListView(APIView):
         products = Productos.objects.filter(eliminar=False)
         lib = []
         for prod in products:
-            color = ColoresProductos.objects.filter(id_prod=prod.id_prod)
-            picture = ImagenesProducto.objects.filter(id_prod=prod.id_prod).first()
+            color = ColoresProductos.objects.filter(id_prod=prod)
+            picture = ImagenesProducto.objects.filter(id_prod=prod.id_prod)
             if (Favoritos.objects.filter(id_prod=prod.id_prod, dni=request.data.get('dni')).exists()):
                 favorite = True
             else:
@@ -201,11 +201,12 @@ class ProductListView(APIView):
             for obj in color:
                 col = obj.id_color.__str__()
                 a.append(col)
-            # for obj2 in picture:
-            #     img = 'http://127.0.0.1:8000'+obj2.img.url
-            #     b.append(img)
+                
             if picture:
-                b='http://127.0.0.1:8000'+picture.img.url
+                for obj2 in picture:
+                    img = 'http://127.0.0.1:8000'+obj2.img.url
+                    b.append(img)
+                #'http://127.0.0.1:8000'+picture.img.url
             else:
                 b='#'
             
@@ -214,7 +215,7 @@ class ProductListView(APIView):
                 'name': prod.nombre,
                 'description':prod.desc,
                 'price': prod.precio, 
-                
+                'icon': b[0],
                 'pictures': b, 
                 'colors': a, 
                 'type': prod.id_cat.__str__(),
@@ -233,6 +234,9 @@ class ProductView(APIView):
             tallas_del_producto = TallaDelProducto.objects.filter(id_prod=id_prod)
             tallas = Talla.objects.filter(id_talle__in = tallas_del_producto.values('id_talle'))
             talles_disponibles = list(tallas.values_list('inicial_talle', flat=True))
+            
+            colores_hex = [col.id_color.exa for col in colors]
+            
             a = []
             b = []
             for obj in colors:
@@ -247,7 +251,8 @@ class ProductView(APIView):
                 'descripcion':product.desc,
                 'precio': product.precio, 
                 'imagenes': b, 
-                'colores': a, 
+                #'colores': a, 
+                'colores': colores_hex,  
                 'tallas': talles_disponibles,
                 'categoria': product.id_cat.__str__(),
                 'eliminar': product.eliminar

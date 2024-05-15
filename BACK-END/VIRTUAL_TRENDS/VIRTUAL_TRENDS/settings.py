@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#CORS_ORIGIN_ALLOW_ALL=True
+# CORS_ORIGIN_ALLOW_ALL=True
 
 #CORS_ALLOWED_ORIGINS = [
  #   'http://127.0.0.1:8000',
@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbvirtualtrends',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'yokit@11',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
@@ -151,6 +151,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = 'media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# IMAGE_ROOT = '/Users/gaghy/Desktop/GitHub/ISPC-VT-2024/webSite/FRONT-END/VIRTUAL-TRENDS/src/assets'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -158,9 +160,9 @@ MEDIA_ROOT = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CUSTOM USER a realizar
-""" AUTH_USER_MODEL = 'VirtualTrends.CustomUser'
+#AUTH_USER_MODEL = 'virtualtrends.CustomUser'
 
-REST_FRAMEWORK = {
+""" REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
@@ -172,5 +174,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAdminUser',
     ],
 
-} """
+}  """
 
