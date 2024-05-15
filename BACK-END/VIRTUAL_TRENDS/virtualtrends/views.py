@@ -191,7 +191,7 @@ class ProductListView(APIView):
         lib = []
         for prod in products:
             color = ColoresProductos.objects.filter(id_prod=prod.id_prod)
-            picture = ImagenesProducto.objects.filter(id_prod=prod.id_prod).first()
+            picture = ImagenesProducto.objects.filter(id_prod=prod.id_prod)
             if (Favoritos.objects.filter(id_prod=prod.id_prod, dni=request.data.get('dni')).exists()):
                 favorite = True
             else:
@@ -201,11 +201,12 @@ class ProductListView(APIView):
             for obj in color:
                 col = obj.id_color.__str__()
                 a.append(col)
-            # for obj2 in picture:
-            #     img = 'http://127.0.0.1:8000'+obj2.img.url
-            #     b.append(img)
+                
             if picture:
-                b='http://127.0.0.1:8000'+picture.img.url
+                for obj2 in picture:
+                    img = 'http://127.0.0.1:8000'+obj2.img.url
+                    b.append(img)
+                #'http://127.0.0.1:8000'+picture.img.url
             else:
                 b='#'
             
@@ -214,7 +215,7 @@ class ProductListView(APIView):
                 'name': prod.nombre,
                 'description':prod.desc,
                 'price': prod.precio, 
-                
+                'icon': b[0],
                 'pictures': b, 
                 'colors': a, 
                 'type': prod.id_cat.__str__(),

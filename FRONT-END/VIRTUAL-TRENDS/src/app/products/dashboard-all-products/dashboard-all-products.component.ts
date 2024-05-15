@@ -20,6 +20,8 @@ export class DashboardAllProductsComponent {
   ngOnInit(): void {
     this.isLoading = true;
     this.loadProducts();
+
+    // TODO: Refactorizar para que se ejecute en el servicio
     setTimeout(() => {
       this.isLoading = false;
     }, 1000);
