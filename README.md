@@ -1,9 +1,7 @@
 # INTEGRANTES ACTUALES QUE PARTICARAN EN LA REFORMULACION DEL SITIO WEB 2023 VIRTUAL TRENDS
   - Antonini, Carla Gisele
   - Fiore, Agostina Maria 
-  - Ponce, Dalma
-  - Yonatan, Acuña
-  - Amaya, Aisha
+  
 
 # ProyectoIntegrador-E-COMMERCE
 
