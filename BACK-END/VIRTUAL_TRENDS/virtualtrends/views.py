@@ -104,9 +104,8 @@ class UsuariosView(View):
     
 
 class ProductoAlCarritoView (APIView):
-    print("0")
-    def get (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    # def get (self, request):
+    #     return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
     def post (self, request):
 
@@ -133,10 +132,10 @@ class ProductoAlCarritoView (APIView):
 
         return Response({'message': 'Producto guardado'}, status=status.HTTP_201_CREATED)
 
-    def put (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    def delete (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    # def put (self, request):
+    #     return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    # def delete (self, request):
+    #     return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 class  ConsultProductoCarrito(APIView):
     def get(self, request,dni):
@@ -237,8 +236,9 @@ class ProductView(APIView):
             a = []
             b = []
             for obj in colors:
-                col = obj.id_color.__str__()
+                col = obj.id_color.nombre
                 a.append(col)
+                
             for obj2 in pictures:
                 img = 'http://127.0.0.1:8000'+obj2.img.url
                 b.append(img)
@@ -253,6 +253,7 @@ class ProductView(APIView):
                 'categoria': product.id_cat.__str__(),
                 'eliminar': product.eliminar
             }
+            print(lib)
 
         except Productos.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)

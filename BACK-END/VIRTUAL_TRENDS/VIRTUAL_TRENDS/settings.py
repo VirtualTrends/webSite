@@ -99,19 +99,26 @@ WSGI_APPLICATION = 'VIRTUAL_TRENDS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbvirtualtrends',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'sql_mode': 'traditional',
-        }
+DATABASE = {
+    'dafault': {
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'dbvirtualtrends',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#       'OPTIONS': {
+#            'sql_mode': 'traditional',
+#        }
+#   }
+#}
 
 
 # Password validation
