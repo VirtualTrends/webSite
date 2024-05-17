@@ -96,7 +96,7 @@ class Talla(models.Model):
     
     def __unicode__(self):
         return self.inicial_talle
-    def __src__(self):
+    def __str__(self):
         return self.inicial_talle
 
 # Tabla para las categoria de los productos.
