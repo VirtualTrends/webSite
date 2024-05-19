@@ -208,6 +208,40 @@ class ColoresProductos(models.Model):
         return self.id_color
     def __str__(self):
         return "Color "+str(self.id_color)+" en "+str(self.id_prod)
+
+# Tabla de colores de cada producto. 
+    
+
+#PRUEBA PREVIA A PONER EL VALOR DEFAULT
+""" class ColoresProductos(models.Model):
+    id_color = models.CharField(max_length=6, primary_key=True)  # Usamos CharField para el código hexadecimal
+    color = models.ForeignKey(Colores, to_field='exa', on_delete=models.CASCADE)  # Usamos el campo 'exa' como clave externa
+    id_prod = models.ForeignKey(Productos, to_field='id_prod', on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'produc_color'
+        verbose_name = 'Colores de los Productos'
+        verbose_name_plgit restore ural = "Colores de Producto"
+
+    def __unicode__(self):
+        return self.id_color
+
+    def __str__(self):
+        return "Color " + str(self.id_color) + " en " + str(self.id_prod) """
+ 
+""" class ColoresProductos(models.Model):
+    id_color = models.ForeignKey('Colores', to_field='exa', on_delete=models.CASCADE)
+    id_prod = models.ForeignKey('Productos', to_field='id_prod', on_delete=models.CASCADE)
+    color = models.CharField(max_length=20, default='ND')  # Valor predeterminado 'ND' (No Definido)
+
+    class Meta:
+        db_table = 'produc_color'
+        verbose_name = 'Colores de los Productos'
+        verbose_name_plural = "Colores de Producto"
+
+    def __str__(self):
+        return f"Color {self.id_color} en {self.id_prod}" """
+
 # Tabla concatenada entre productos y tallas, relación muchos a muchos. 
 
 class TallaDelProducto(models.Model):

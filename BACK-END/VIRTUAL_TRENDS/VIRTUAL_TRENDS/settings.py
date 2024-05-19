@@ -104,14 +104,23 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbvirtualtrends',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'yokit@11',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'traditional',
         }
     }
-}
+} 
+
+""" DATABASES = {
+    'default': {
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME': 'db_virtual_trends',
+        'NAME':BASE_DIR / 'db.sqlite3',
+
+    }
+} """
 
 
 # Password validation
@@ -149,8 +158,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/productos/'
+#MEDIA_ROOT = 'media/'
+#MEDIA_ROOT = "media/productos/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
