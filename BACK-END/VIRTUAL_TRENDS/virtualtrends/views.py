@@ -295,7 +295,7 @@ class RegistroView(APIView):
                 dni=dni, nombre=nombre, apellido=apellido, tel_cel=tel_cel, dir_calle=dir_calle,
                 dir_numero=dir_numero, cp=cp, ciudad=ciudad, provincia=provincia, ph=ph
             )
-            login = Login.objects.create(email=email, psw=psw, dni=usuario)
+            Login.objects.create(email=email, psw=psw, dni=usuario)
         except IntegrityError:
             raise ValidationError({'error': 'El email o DNI ya se encuentran en uso.'})
 
