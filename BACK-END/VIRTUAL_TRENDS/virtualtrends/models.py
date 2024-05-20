@@ -96,7 +96,7 @@ class Talla(models.Model):
     
     def __unicode__(self):
         return self.inicial_talle
-    def __src__(self):
+    def __str__(self):
         return self.inicial_talle
 
 # Tabla para las categoria de los productos.
@@ -168,7 +168,8 @@ class Productos(models.Model):
 # Tabla de la ubicacion de las imagenes de cada producto. 
 
 class ImagenesProducto(models.Model):
-    img = models.CharField(max_length=150)
+    #img = models.CharField(max_length=150)
+    img = models.ImageField(upload_to='productos')
     id_prod = models.ForeignKey(Productos, to_field='id_prod', on_delete=models.CASCADE)
     class Meta:
         db_table = 'produc_img'
