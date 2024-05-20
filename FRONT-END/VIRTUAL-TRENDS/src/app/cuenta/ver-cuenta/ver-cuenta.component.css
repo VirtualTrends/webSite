@@ -1,3 +1,15 @@
+.container-ver-cuenta {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height:auto;
+  max-width:100%;
+
+}
+
+
 .btn-dark {
   display: block;
   cursor: pointer;
@@ -107,6 +119,8 @@
 }
 
 .buttons{
+  margin-top: 7.5em;
+  margin-bottom:12.5em;
   display: flex;
   justify-content: center;
 }

@@ -1,95 +1,95 @@
-<div class="saludo">
-    <h1>BIENVENIDO!</h1>
-    <p>Te damos la bienvenida a tu perfil.</p>
-</div>
-
-<div class="buttons">
-    <button class="btn btn-dark top_button" (click)="toggleInfoUsuario()">{{estado_button_usuario}}</button>
-</div>
-
-<div *ngIf="ver_usuario">  
-
-    <div class="datos-container" *ngIf="showEditarCuenta === false">
-        <h2>INFORMACION DEL USUARIO</h2>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>DNI</h3>
-                <p>{{cuentaData.dni}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Nombre</h3>
-                <p>{{cuentaData.nombre}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Apellido</h3>
-                <p>{{cuentaData.apellido}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Numero de teléfono</h3>
-                <p>{{cuentaData.tel_cel}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Calle</h3>
-                <p>{{cuentaData.dir_calle}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Dirección</h3>
-                <p>{{cuentaData.dir_numero}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Codigo Postal</h3>
-                <p>{{cuentaData.cp}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Ciudad</h3>
-                <p>{{cuentaData.ciudad}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>Provincia</h3>
-                <p>{{cuentaData.provincia}}</p>
-            </div>
-        </div>
-        <div class="dato-element">
-            <div class="dato-content">    
-                <h3>PH</h3>
-                <p>{{cuentaData.ph}}</p>
-            </div>
-        </div>
-
+<div class ="container-ver-cuenta">
+    <div class="saludo">
+        <h1>BIENVENIDO!</h1>
+        <p>Te damos la bienvenida a tu perfil.</p>
     </div>
-
-    <app-editar-cuenta *ngIf="showEditarCuenta === true" ></app-editar-cuenta>
-
-        
-
-</div>
-
-
-
-
-<div class="buttons">
-    <button type="button" class="btn btn-dark" (click)="logout()">CERRAR SESIÓN</button>
     
-    <button type="button" class="btn btn-dark right_buttons" (click)="navigateToAdmin()" *ngIf="user_data.id_lvl == 1">ADMIN</button>
-    <div *ngIf="ver_usuario">    
-        <button type="button" class="btn btn-dark right_buttons" (click)="showEditarCuentaForm()" *ngIf="!showEditarCuenta">EDITA TU PERFIL</button>
-        <button type="button" class="btn btn-dark right_buttons" (click)="showEditarCuentaForm()" *ngIf="showEditarCuenta">DEJAR DE EDITAR</button>
+    <div class="buttons">
+        <button class="btn btn-dark top_button" (click)="toggleInfoUsuario()">{{estado_button_usuario}}</button>
     </div>
+    
+    <div *ngIf="ver_usuario">  
+    
+        <div class="datos-container" *ngIf="showEditarCuenta === false">
+            <h2>INFORMACION DEL USUARIO</h2>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>DNI</h3>
+                    <p>{{cuentaData.dni}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Nombre</h3>
+                    <p>{{cuentaData.nombre}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Apellido</h3>
+                    <p>{{cuentaData.apellido}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Numero de teléfono</h3>
+                    <p>{{cuentaData.tel_cel}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Calle</h3>
+                    <p>{{cuentaData.dir_calle}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Dirección</h3>
+                    <p>{{cuentaData.dir_numero}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Codigo Postal</h3>
+                    <p>{{cuentaData.cp}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Ciudad</h3>
+                    <p>{{cuentaData.ciudad}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>Provincia</h3>
+                    <p>{{cuentaData.provincia}}</p>
+                </div>
+            </div>
+            <div class="dato-element">
+                <div class="dato-content">    
+                    <h3>PH</h3>
+                    <p>{{cuentaData.ph}}</p>
+                </div>
+            </div>
+    
+        </div>
+    
+        <app-editar-cuenta *ngIf="showEditarCuenta === true" ></app-editar-cuenta>
+    
+            
+    
+    </div>
+    
+    
+    <div class="buttons">
+        <button type="button" class="btn btn-dark" (click)="logout()">CERRAR SESIÓN</button>
+        
+        <button type="button" class="btn btn-dark right_buttons" (click)="navigateToAdmin()" *ngIf="user_data.id_lvl == 1">ADMIN</button>
+        <div *ngIf="ver_usuario">    
+            <button type="button" class="btn btn-dark right_buttons" (click)="showEditarCuentaForm()" *ngIf="!showEditarCuenta">EDITA TU PERFIL</button>
+            <button type="button" class="btn btn-dark right_buttons" (click)="showEditarCuentaForm()" *ngIf="showEditarCuenta">DEJAR DE EDITAR</button>
+        </div>
+    </div>
+    
 </div>
-
