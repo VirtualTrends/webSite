@@ -102,12 +102,22 @@ WSGI_APPLICATION = 'VIRTUAL_TRENDS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.sqlite3',
-        'NAME':BASE_DIR / 'db.sqlite3',
-
+        'NAME':BASE_DIR / 'db.sqlite3' ,
+    },
+    'mysql_db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbvirtualtrends',
+        'USER': 'root',
+        'PASSWORD': 'yokit@11',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        } 
     }
 }
 # DATABASES = {
-#    'default': {
+#    'mysql_db': {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME': 'dbvirtualtrends',
 #        'USER': 'root',

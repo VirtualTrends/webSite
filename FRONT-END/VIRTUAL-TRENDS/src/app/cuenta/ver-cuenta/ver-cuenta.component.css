@@ -9,6 +9,29 @@
 
 }
 
+.datos-container{
+  border: 2px solid #575757;
+  border-radius: 6px;
+  padding: 2%;
+  margin-left: 24%;
+  margin-right: 24%;
+  background-color: #F8F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.datos-container>h2{
+  font-size: 20px;
+  border-top: 2px solid #575757;
+  border-bottom: 2px solid #575757;
+  padding: 1px;
+  margin-bottom: 20px;
+}
+
+
 
 .btn-dark {
   display: block;
@@ -59,27 +82,6 @@
   font-family: archivo;
 }
 
-.datos-container{
-  border: 2px solid #575757;
-  border-radius: 6px;
-  padding: 2%;
-  margin-left: 24%;
-  margin-right: 24%;
-  background-color: #F8F8F8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.datos-container>h2{
-  font-size: 20px;
-  border-top: 2px solid #575757;
-  border-bottom: 2px solid #575757;
-  padding: 1px;
-  width: auto;
-  margin-bottom: 20px;
-}
 
 .dato-element{
   position: relative;
