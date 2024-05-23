@@ -6,6 +6,7 @@ type productoCarrito = {
   id_car: number,
   nombre: string,
   precio: number,
+  img: string,
   cantidad: number,
   talla: string,
   color: string,
