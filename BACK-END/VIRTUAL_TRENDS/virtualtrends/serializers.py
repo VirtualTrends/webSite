@@ -18,9 +18,32 @@ class ColorProducSerializer(serializers.ModelSerializer):
         fields = ['id_color']
         
 class ProducCarritoSerializer(serializers.ModelSerializer):
+    precio = serializers.SerializerMethodField()  # Campo para el precio
+    img = serializers.SerializerMethodField()  # Campo para el precio
+
     class Meta:
         model = ProductosEnCarrito
-        fields = '__all__'
+        fields = ['id', 'id_prod', 'cantidad', 'talla', 'color', 'espersonalizado', 'precio', 'img']  
+
+    def get_precio(self, instance):
+        # Calcula y devuelve el precio del producto
+        precio_producto = instance.id_prod.precio
+        return precio_producto
+    
+    def get_img(self, instance):
+        # Calcula y devuelve la imagen del producto
+        img = ImagenesProducto.objects.filter(id_prod=instance.id_prod).first()
+        if img:
+            img_url = 'http://127.0.0.1:8000' + img.img.url
+        else:
+            img_url = None
+        return img_url
+    
+        
+#class ProducCarritoSerializer(serializers.ModelSerializer):
+    #class Meta:
+      #  model = ProductosEnCarrito
+       # fields = '__all__'
 
 
 class ColorSerializer(serializers.ModelSerializer):
