@@ -9,3 +9,6 @@ __pycache__/
 *.pyo
 *.pyd
 migrations/
+
+/webSite.code-workspace
+/BACK-END/VIRTUAL_TRENDS/db.sqlite3

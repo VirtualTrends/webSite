@@ -101,17 +101,34 @@ WSGI_APPLICATION = 'VIRTUAL_TRENDS.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME':BASE_DIR / 'db.sqlite3' ,
+    },
+    'mysql_db': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbvirtualtrends',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'yokit@11',
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
             'sql_mode': 'traditional',
-        }
+        } 
     }
 }
+# DATABASES = {
+#    'mysql_db': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'dbvirtualtrends',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#       'OPTIONS': {
+#            'sql_mode': 'traditional',
+#        }
+#   }
+#}
 
 
 # Password validation
@@ -149,6 +166,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

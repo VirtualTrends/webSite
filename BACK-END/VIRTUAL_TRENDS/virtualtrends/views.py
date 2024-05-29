@@ -6,8 +6,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import  IsAdminUser, AllowAny, IsAuthenticated
-from .serializers import CategoriaSerializer, LoginSerializer, ProductSerializer, ImgProducSerializer, FavoriteSerializer, UsuarioSerializer
-from rest_framework import status
+from .serializers import *
 from .models import Categoria, Login, Usuario, Productos, ColoresProductos, ImagenesProducto, Colores, Talla, TallaDelProducto, ProductosEnCarrito, TallesPersonalizados, Carrito, Favoritos, Newsletter 
 from django.forms.models import model_to_dict
 from rest_framework.exceptions import ValidationError
@@ -105,9 +104,8 @@ class UsuariosView(View):
     
 
 class ProductoAlCarritoView (APIView):
-    print("0")
-    def get (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    # def get (self, request):
+    #     return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
     def post (self, request):
 
@@ -134,39 +132,22 @@ class ProductoAlCarritoView (APIView):
 
         return Response({'message': 'Producto guardado'}, status=status.HTTP_201_CREATED)
 
-    def put (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    def delete (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    # def put (self, request):
+    #     return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    # def delete (self, request):
+    #     return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 class  ConsultProductoCarrito(APIView):
-    def get(self, request):
-        dni_rec=request.GET.get('dni')
-        carrito = Carrito.objects.filter(dni=Usuario.objects.get(dni=dni_rec), concretado=False).first()
-
+    def get(self, request,dni):
+        user = Usuario.objects.get(dni=dni)
+        carrito = Carrito.objects.filter(dni=user, concretado=False).first()
         if carrito:
-            products = []
             productos_en_carrito = ProductosEnCarrito.objects.filter(id_car=carrito)
-            for list in productos_en_carrito:  
-                products.append({
-                    'id_prod': list.id_prod.id_prod,
-                    'id_car': list.id_car.id_car,
-                    'nombre': list.id_prod.nombre,
-                    'precio': list.id_prod.precio,
-                    'cantidad': list.cantidad,
-                    'talla': list.talla,
-                    'color': list.color,
-                    'espersonalizado': list.espersonalizado
-                })
-
-            return Response(products)
+            serializer = ProducCarritoSerializer(productos_en_carrito, many= True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         return Response({'error': 'Aun no tienes articulos en tu carrito'}, status=status.HTTP_404_NOT_FOUND)
-    def put (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    def post (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    def delete (self, request):
-        return Response({'message': 'Peticion erronea'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    
     
 class LoginListView(APIView):
     def get(self, request):
@@ -219,16 +200,21 @@ class ProductListView(APIView):
             for obj in color:
                 col = obj.id_color.__str__()
                 a.append(col)
-            for obj2 in picture:
-                img = obj2.img
-                b.append(img)
+                
+            if picture:
+                for obj2 in picture:
+                    img = 'http://127.0.0.1:8000'+obj2.img.url
+                    b.append(img)
+                #'http://127.0.0.1:8000'+picture.img.url
+            else:
+                b='#'
             
             lib.append ({
                 'id':prod.id_prod, 
                 'name': prod.nombre,
                 'description':prod.desc,
                 'price': prod.precio, 
-                'icon': b[0], 
+                'icon': b[0],
                 'pictures': b, 
                 'colors': a, 
                 'type': prod.id_cat.__str__(),
@@ -250,10 +236,11 @@ class ProductView(APIView):
             a = []
             b = []
             for obj in colors:
-                col = obj.id_color.__str__()
+                col = obj.id_color.nombre
                 a.append(col)
+                
             for obj2 in pictures:
-                img = obj2.img
+                img = 'http://127.0.0.1:8000'+obj2.img.url
                 b.append(img)
             
             lib = {
@@ -266,6 +253,7 @@ class ProductView(APIView):
                 'categoria': product.id_cat.__str__(),
                 'eliminar': product.eliminar
             }
+            print(lib)
 
         except Productos.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
@@ -307,7 +295,7 @@ class RegistroView(APIView):
                 dni=dni, nombre=nombre, apellido=apellido, tel_cel=tel_cel, dir_calle=dir_calle,
                 dir_numero=dir_numero, cp=cp, ciudad=ciudad, provincia=provincia, ph=ph
             )
-            login = Login.objects.create(email=email, psw=psw, dni=usuario)
+            Login.objects.create(email=email, psw=psw, dni=usuario)
         except IntegrityError:
             raise ValidationError({'error': 'El email o DNI ya se encuentran en uso.'})
 

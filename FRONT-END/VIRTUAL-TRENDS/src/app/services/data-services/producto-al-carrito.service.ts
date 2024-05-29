@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DniDataService } from './dni-data.service';
-type productoCarrito = { 
+type productoCarrito = {
   id_prod: number,
   id_car: number,
   nombre: string,
@@ -36,7 +36,7 @@ export class ProductoAlCarritoService {
   getCarrito() {
 
     this.dniData.recibirDNI().subscribe(dniTemp => {
-      this.http.get<productoCarrito[]>(`http://localhost:8000/api/consultar-carrito/?dni=${dniTemp}`).subscribe(carrito => {
+      this.http.get<productoCarrito[]>(`http://localhost:8000/api/consultar-carrito/${dniTemp}`).subscribe(carrito => {
         this.contenidoCarrito = carrito
       })
     });

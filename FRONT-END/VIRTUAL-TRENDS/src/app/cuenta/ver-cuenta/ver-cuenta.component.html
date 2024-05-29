@@ -1,7 +1,9 @@
-<div class="saludo">
-    <h1>BIENVENIDO!</h1>
-    <p>Te damos la bienvenida a tu perfil.</p>
-</div>
+<div class ="container-ver-cuenta">
+    <div class="saludo">
+        <h1>BIENVENIDO!</h1>
+        <p>Te damos la bienvenida a tu perfil.</p>
+    </div>
+</div>    
 
 <div class="buttons">
     <button class="btn btn-dark top_button" (click)="toggleInfoUsuario()">{{estado_button_usuario}}</button>
@@ -81,8 +83,6 @@
 </div>
 
 
-
-
 <div class="buttons">
     <button type="button" class="btn btn-dark" (click)="logout()">CERRAR SESIÓN</button>
     
@@ -92,4 +92,5 @@
         <button type="button" class="btn btn-dark right_buttons" (click)="showEditarCuentaForm()" *ngIf="showEditarCuenta">DEJAR DE EDITAR</button>
     </div>
 </div>
+    
 
