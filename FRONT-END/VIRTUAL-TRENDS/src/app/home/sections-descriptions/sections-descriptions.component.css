@@ -79,7 +79,7 @@
 }
 
 .ca_boton_container {
-    width: 100%;
+    width: 150%;
     flex-direction: column;
     align-content: center;
     display: flex;
@@ -98,8 +98,8 @@
     font-size: 16px;
     font-family: 'Archivo', sans-serif;
     cursor: pointer;
-    /*padding: 20px 40px;
-    align-self: center;*/
+    padding: 20px 40px;
+    align-self: center;
 }
 
 .all-products-button:hover {
@@ -122,12 +122,12 @@
 
     .main-all-sections {
         width: 80%;
-        
+
     }
     .main-container h2 {
         font-size: 1em;
     }
-    
+
     .main-container {
         /*margin: 0 auto;*/
         width: 100%;
@@ -136,7 +136,7 @@
     .main-container p {
         font-size: 0.75em;
     }
-    
+
     .main-nosotros-container {
         /*margin: 0 auto;*/
         width: 75%;
@@ -156,7 +156,7 @@
 /** Media queries TABLETS */
 
 @media screen and (min-width: 768px) and (max-width: 1299px) {
-    
+
     .main-all-sections {
         width: 75%;
       }
@@ -180,7 +180,7 @@
     .main-all-sections {
         width: 80%;
       }
-    
+
 }
 
 @media screen and (min-width: 2500px) {
@@ -188,7 +188,7 @@
         width: 100%;
         font-size: 1.65em;
     }
-    
+
     .main-comunidad-title {
         width: 100%;
         margin-top: 30px;
@@ -198,5 +198,5 @@
         width: 100%;
         margin-top: 30px;
     }
-    
+
 }
