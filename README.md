@@ -6,7 +6,7 @@ https://github.com/VirtualTrends/VirtualTrends-2024
 
 Ahí podrás encontrar el proyecto integral. En este README se encuentra la información sobre el website. 
 
-# INTEGRANTES ACTUALES QUE PARTICIPARON EN LA REFORMULACION DEL SITIO WEB 2023 VIRTUAL TRENDS
+# INTEGRANTES ACTUALES QUE PARTICIPARON EN LA REFORMULACION DEL SITIO WEB 2024 VIRTUAL TRENDS
   - Antonini, Carla Gisele
   - Fiore, Agostina Maria 
 
