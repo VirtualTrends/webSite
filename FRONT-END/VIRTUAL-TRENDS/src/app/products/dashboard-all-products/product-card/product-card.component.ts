@@ -59,6 +59,7 @@ export class ProductCardComponent implements OnInit {
     this.productData.enviarDatos(propiedad, id);
     this.products.forEach((product: Products.Product) => {
       if (product.id === id && this.hasAmount) {
+        this.productData.enviarDatos("icon", product.pictures);
         this.productData.enviarDatos("cantidad", product.amount);
       }
     });

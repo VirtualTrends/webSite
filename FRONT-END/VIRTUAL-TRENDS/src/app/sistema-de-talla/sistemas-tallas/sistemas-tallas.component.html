@@ -1,4 +1,4 @@
-<div class="container-texto" *ngIf="tofPersonalizado == false && tofEstandar==false">
+<div class="container-texto" *ngIf="tofPersonalizado == false && tofEstandar==false && tofAppMobile==false ">
 
   <h1 class="Sistema-talle" > SISTEMA DE TALLES </h1>
   <P class= "STtext"> Nuestros avatares se manejan tanto en un sistema de talles basados en medidas estándar para los talles (XS-S-M-L-XL) que podés encontrar en los negocios físicos así como también podesmos construir uno a tu medida </P>
@@ -6,12 +6,15 @@
   <button type="button" class="btn btn-dark" (click)="abrirEstandar()">TALLA ESTANDAR</button>
   <p class= "STtext1"> O cargá tus medidas personales para que podamos confeccionar la prenda a tu medida</p>
   <button type="button" class="btn btn-dark" (click)="abrirPersonalizado()">TALLA PERSONALIZADA</button>
-
+  <p class= "STtextAppMobil"> ¿Queres cargar tus datos o preferis un escaneo corporal?</p>
+  <button type="button" class="btn btn-dark-appmobile" (click)="abrirAppMobile()">ESCANEO CORPORAL</button>
 </div>
 
 <app-talla-personalizada *ngIf="tofPersonalizado == true" class="container-texto"></app-talla-personalizada>
 
 <app-talla-estandar *ngIf="tofEstandar == true" class="container-texto"></app-talla-estandar>
+
+<app-app-mobile *ngIf="tofAppMobile == true" class="container-texto"></app-app-mobile>
 
 
 

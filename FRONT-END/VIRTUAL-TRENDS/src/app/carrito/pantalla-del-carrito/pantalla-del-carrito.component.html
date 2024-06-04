@@ -1,32 +1,42 @@
-<div class="carrito">
-  <div class="titulo">
-    <h1>CARRITO</h1>
-  </div>
-  <div class="subtitulo">
-    <p>Lista de productos</p>
-  </div>
-  <button class="botones" (click)="abrirCarrito()">
-    {{estado_button_carrito}}
-  </button>
-  <div class="lista" *ngIf="ver_carrito">
-    <div class="ngFOR" *ngFor="let producto of productos">
 
-      <img class="imagen" src={{producto.url}} alt="">
-      <div class="p">
-        <p1>{{producto.nombre}}</p1>
-        <p>${{producto.precio}}</p>
-        <p2>{{producto.talla}} | {{producto.color}}</p2>
+<div class="main-container">
+  <div class="carrito">
+    <div class="titulo">
+      <h1>CARRITO</h1>
+    </div>
+    <div class="subtitulo">
+      <div class="row">
+        <div class="col-3"> PRODUCTOS</div>
+        <div class="col-5"> DESCRIPCION </div>
+        <div class="col-2"> SUBTOTAL </div>
+        <div class="col-2"> CANTIDAD </div>
       </div>
+    </div>
+
+  
+    <button class="botones" (click)="abrirCarrito()">
+      {{estado_button_carrito}}
+    </button>
+    <div class="lista" *ngIf="ver_carrito">
+      <div class="ngFOR" *ngFor="let producto of productos">
+
+        <img class="imagen" src={{producto.url}} alt="">
+        <div class="p">
+          <p1>{{producto.nombre}}</p1>
+          <p>${{producto.precio}}</p>
+          <p2>{{producto.talla}} | {{producto.color}}</p2>
         </div>
-  </div>
-  <div class="subtotal">
-    <p>Subtotal: ${{productosCarrito.precioSubtotal}} </p>
-    <p>Impuestos (135% AFIP): ${{productosCarrito.precioSubtotal *1.35}}</p>
-    <hr>
-    <p>Total: ${{productosCarrito.precioSubtotal *2.35}} </p>
-  </div>
-  <div class="botones">
-    <button class="volver">SEGUIR COMPRANDO</button>
-    <button (click)="navigate()" class="finalizar" [ngClass]="{disabled: productos.length === 0}" [disabled]="productos.length === 0">PAGAR</button>
+      </div>
+    </div>
+    
+    <div class="subtotal">
+      <p>Subtotal: ${{productosCarrito.precioSubtotal}} </p>
+      <p>Impuestos (135% AFIP): ${{productosCarrito.precioSubtotal *1.35}}</p>
+
+      <p>Total: ${{productosCarrito.precioSubtotal *2.35}} </p>
+    </div>
+    <div class="botones">
+      <button (click)="navigate()" class="finalizar" [ngClass]="{disabled: productos.length === 0}" [disabled]="productos.length === 0">COMPRAR</button>
+    </div>
   </div>
 </div>

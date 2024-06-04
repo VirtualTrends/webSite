@@ -1,9 +1,14 @@
-# INTEGRANTES ACTUALES QUE PARTICARAN EN LA REFORMULACION DEL SITIO WEB 2023 VIRTUAL TRENDS
+# VIRTUAL-TRENDS-Proyecto-2024
+
+Este repositorio forma parte de la actualización del proyecto app mobile de VIRTUAL TRANDS 2023. Para encontrar información integral respecto del proyecto 2024 te pedimos ingresar a nuestro repositorio destinado a la documentación que se encuentra en: 
+
+https://github.com/VirtualTrends/VirtualTrends-2024
+
+Ahí podrás encontrar el proyecto integral. En este README se encuentra la información sobre el website. 
+
+# INTEGRANTES ACTUALES QUE PARTICIPARON EN LA REFORMULACION DEL SITIO WEB 2023 VIRTUAL TRENDS
   - Antonini, Carla Gisele
   - Fiore, Agostina Maria 
-  - Ponce, Dalma
-  - Yonatan, Acuña
-  - Amaya, Aisha
 
 # ProyectoIntegrador-E-COMMERCE
 
